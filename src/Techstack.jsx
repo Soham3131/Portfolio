@@ -22,7 +22,7 @@ const techs = [
 const Techstack = () => {
   return (
     <div className="bg-white py-20 px-6 sm:px-10 mb-20">
-      <h2 className="text-[4rem] sm:text-[5rem] font-extrabold text-center text-black mb-16">
+      <h2 className="text-[4rem] sm:text-[5rem] font-sans font-extrabold text-center text-black mb-16">
         My Tech Stack
       </h2>
 

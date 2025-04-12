@@ -90,13 +90,20 @@ const Footer = () => {
 
         <motion.div variants={lineVariants}>
   <Link to="/contact">
+    
     <motion.button
-      variants={lineVariants}
-      onClick={triggerClickEffect}
-      className="mt-10 px-10 py-4 bg-black border-4 border-white text-white text-lg font-semibold rounded-full hover:bg-white hover:text-black transition duration-300"
-    >
-      CONTACT ME
-    </motion.button>
+  variants={lineVariants}
+  onClick={(e) => {
+    triggerClickEffect(e);
+    setTimeout(() => {
+      window.location.href = "/contact"; // 
+    }, 300); 
+  }}
+  className="mt-10 px-10 py-4 bg-black border-4 border-white text-white text-lg font-semibold rounded-full hover:bg-white hover:text-black transition duration-300"
+>
+  CONTACT ME
+</motion.button>
+
   </Link>
 </motion.div>
 

@@ -1,16 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { FiMenu, FiX } from "react-icons/fi";
 import gsap from "gsap";
-import sohamm from "./Images/sohamm.png";
+import soham from "./Images/soham.png";
 import Design from "./Design";
 import Moon from "./Moon";
 import Techstack from "./Techstack";
 import Projects from "./Projects";
 import DetailP from "./DetailP";
 import Footer from "./Footer";
-import { Router,Routes,Route } from "react-router-dom";
-import Contact from "./Contact";
+import { TbMoonStars, TbSunMoon } from "react-icons/tb";
 
 const movingTexts = ["CODER", "FULL STACK DEVELOPER", "FRONTEND DEVELOPER", "GRAPHIC DESIGNER"];
 
@@ -77,68 +75,66 @@ const Home = () => {
   }, [charIndex, isDeleting, currentWord]);
 
   return (
-   
-    <div className="relative bg-white p-7 w-full h-screen">
-      {/* Background Image */}
-      <img className="w-full rounded-md h-full object-cover" src={sohamm} alt="Background" />
+    <div className="relative p-5 bg-white w-full min-h-screen">
+      {/* --- Persistent Sidebar & Toggle Button --- */}
+      <div className="fixed top-0 left-0 z-50 flex flex-col">
+        {/* Toggle Button */}
+        <button
+          className="m-5 z-50 text-white text-[30px] bg-black bg-opacity-60 p-2 rounded-md"
+          onClick={() => setMenuOpen(!menuOpen)}
+        >
+          {menuOpen ? <TbSunMoon /> : <TbMoonStars />}
+        </button>
 
-      {/* Sidebar Menu Button (on the left) */}
-      <button
-        className="absolute top-8 left-8 z-50 text-white text-[35px] bg-black bg-opacity-50 p-2 rounded-md"
-        onClick={() => setMenuOpen(!menuOpen)}
-      >
-        {menuOpen ? <FiX className="hover:opacity-80" /> : <FiMenu className="hover:opacity-80" />}
-      </button> 
-
-      {/* Left Sidebar Menu */}
-      <div
-        className={`fixed top-0 left-0 h-full w-64 bg-black bg-opacity-90 text-white transform ${
-          menuOpen ? "translate-x-0" : "-translate-x-full"
-        } transition-transform duration-300 ease-in-out z-40 p-6`}
-      >
-        <nav className="flex flex-col mt-[65px] space-y-6">
-          <Link to="/" className="hover:text-gray-400 text-lg" onClick={triggerClickEffect}>
-            Home
-          </Link>
-          {/* <Link to="/events" className="hover:text-gray-400 text-lg" onClick={triggerClickEffect}>
-            Skills
-          </Link> */}
-          <Link to="/contact" className="hover:text-gray-400 text-lg" onClick={triggerClickEffect}>
-            Contact Me
-          </Link>
-        </nav>
+        {/* Sidebar */}
+        <div
+          className={`h-screen w-64 bg-black bg-opacity-90 text-white transform ${
+            menuOpen ? "translate-x-0" : "-translate-x-full"
+          } transition-transform duration-300 ease-in-out p-6 fixed top-0 left-0 z-40`}
+        >
+          <nav className="flex flex-col mt-[65px] space-y-6">
+            <Link to="/" className="hover:text-gray-400 text-lg" onClick={triggerClickEffect}>
+              Home
+            </Link>
+            <Link to="/contact" className="hover:text-gray-400 text-lg" onClick={triggerClickEffect}>
+              Contact Me
+            </Link>
+          </nav>
+        </div>
       </div>
 
-      {/* Right Side Text Animation */}
-      <div className="absolute top-1/3 right-10 text-white text-right">
-        <h2 className="text-2xl font-light">I AM</h2>
-        <div className="flex text-6xl font-bold">
-          <span className="block mr-2">SOHAM</span>
-          <span className="block">DANG</span>
-        </div>
-        <div className="text-5xl font-extrabold mt-2">
-          A <span className="text-orange-400">{displayText}</span>
-        </div>
+      {/* --- Hero Section --- */}
+      <div className="relative w-full h-screen">
+        <img className="w-full h-full object-cover" src={soham} alt="Background" />
 
-        {/* Hire Me Button with Sprinkle Effect */}
-        <Link to="/contact">
-          <button className="bg-orange-400 p-3 rounded-md mt-5 absolute right-5" onClick={triggerClickEffect}>
-            Hire me!
-          </button>
-        </Link>
+        {/* Static Text Block */}
+        <div className="absolute top-1/3 right-10 text-white text-right z-10">
+          <h2 className="text-2xl font-light">I AM</h2>
+          <div className="text-4xl sm:text-5xl md:text-6xl font-bold">
+            <span>SOHAM DANG</span>
+          </div>
+          <div className="sm:text-4xl text-3xl md:text-5xl font-extrabold mt-2">
+            A <span className="text-orange-400 ml-2">{displayText}</span>
+          </div>
+          <Link to="/contact">
+            <button
+              className="bg-orange-400 p-3 rounded-md mt-5"
+              onClick={triggerClickEffect}
+            >
+              Hire me!
+            </button>
+          </Link>
+        </div>
       </div>
-      <Design/>
-      <Moon/>
-      <Techstack/>
-      <Projects/>
-      <DetailP/>
-      <Footer/>
 
-      
-        
-    
+      {/* --- Page Content --- */}
+      <Design />
+      <Moon />
+      <Techstack />
+      <Projects />
+      <DetailP />
+      <Footer />
     </div>
-   
   );
 };
 

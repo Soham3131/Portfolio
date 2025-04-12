@@ -9,6 +9,7 @@ import Contact from './Contact';
 const App = () => {
   return (
     <Router>
+   
       <SmoothScrollWrapper>
         <Routes>
           <Route path="/" element={<Home />} />
