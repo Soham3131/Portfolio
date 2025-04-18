@@ -2,13 +2,15 @@ import React, { useState } from 'react';
 import { FaGithub } from 'react-icons/fa';
 import codesph from "./Images/codesph.gif";
 import codesph2 from "./Images/codesph2.png";
-import andi from "./Images/andi.gif";
+import andi2 from "./Images/andi2.gif";
 import andi1 from "./Images/andi1.png";
-import fashion from "./Images/fashion.gif";
+
+import fashionv from "./Images/fashionv.gif"
 import fashion1 from "./Images/fashion1.png";
 import razorpay from "./Images/razorpay.gif";
 import razorpay1 from "./Images/razorpay1.png";
-import registerkaro from "./Images/registerkaro.gif";
+
+import regis from "./Images/regis.gif";
 import registerkaro1 from "./Images/registerkaro1.png";
 
 const projects = [
@@ -23,14 +25,14 @@ const projects = [
     title: "Andi Software",
     description:
       "An IT service website for software solutions, development, and tech support with modern responsive UI.",
-    gif: andi,
+    gif: andi2,
     static: andi1,
   },
   {
     title: "Fashion Week",
     description:
       "Stay ahead in fashion with daily updates, trends, and stylish design inspiration in this aesthetic showcase.",
-    gif: fashion,
+    gif: fashionv,
     static: fashion1,
   },
   {
@@ -44,7 +46,7 @@ const projects = [
     title: "RegisterKaro",
     description:
       "A legal compliance platform offering online services for business registrations, tax filing, and more.",
-    gif: registerkaro,
+    gif: regis,
     static: registerkaro1,
   },
 ];

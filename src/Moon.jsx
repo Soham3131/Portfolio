@@ -1,14 +1,24 @@
 import React from 'react';
-import moon1 from "./Images/moon1.gif";
+
+import moon1v from "./Images/moon1v.mp4"
 
 const Moon = () => {
   return (
     <div className="relative w-full h-screen">
-      <img
+      {/* <img
         src={moon1}
         alt="moon"
         className="w-full rounded-lg h-full object-cover"
-      />
+      /> */}
+      <video
+  src={moon1v}
+  autoPlay
+  loop
+  muted
+  playsInline
+  className="absolute inset-0 w-full h-full object-cover z-0 rounded-md"
+/>
+
 
       <div className="absolute top-1/2 left-4 sm:left-10 md:left-16 transform -translate-y-1/2 text-white max-w-xs sm:max-w-md md:max-w-xl lg:max-w-2xl">
         <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">ABOUT</h1>

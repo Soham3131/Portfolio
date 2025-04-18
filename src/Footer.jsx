@@ -1,9 +1,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import half from './Images/half.gif';
+
+import moonv from "./Images/moonv.mp4"
 import { Link } from 'react-router-dom';
 import gsap from "gsap";
-import Contact from './Contact';
+
 
 const triggerClickEffect = (event) => {
   const rect = event.target.getBoundingClientRect();
@@ -67,11 +68,20 @@ const Footer = () => {
   return (
     <div className="relative w-full min-h-screen bg-black overflow-hidden rounded-md">
       {/* Background GIF */}
-      <img
+      {/* <img
         src={half}
         alt="footer background"
         className="absolute inset-0 w-full h-full object-cover z-0 rounded-md"
-      />
+      /> */}
+      <video
+  src={moonv}
+  autoPlay
+  loop
+  muted
+  playsInline
+  className="absolute inset-0 w-full h-full object-cover z-0 rounded-md"
+/>
+
 
       {/* Animated Content */}
       <motion.div

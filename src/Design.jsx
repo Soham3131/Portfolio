@@ -2,8 +2,9 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import WORKS from "./Images/WORKS.gif";
-import SmoothScrollWrapper from './SmoothScrollWrapper';
+
+import walk from "./Images/walk.mp4"
+
 
 
 const lineVariants = {
@@ -36,7 +37,7 @@ const Design = () => {
   return (
     <div className='bg-white px-7 py-10 overflow-hidden'>
       <motion.div
-        className='text-[4rem] sm:text-[7rem] md:text-[10rem] lg:text-[15rem] font-impact text-center tracking-[-0.03em]'
+        className='text-[3.5rem] sm:text-[7rem] md:text-[10rem] lg:text-[15rem] font-impact text-center tracking-[-0.03em]'
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.3 }}
@@ -46,15 +47,20 @@ const Design = () => {
         <motion.h1 variants={lineVariants}>DESIGN</motion.h1>
         <motion.h1 variants={lineVariants}>IS THE DESIGN</motion.h1>
         <motion.h1 variants={lineVariants}>THAT</motion.h1>
-        <motion.img
-          src={WORKS}
-          alt="WORKS"
-          className='h-[10rem] sm:h-[12rem] lg:h-[18rem]  mx-auto object-contain mt-4'
-          initial={{ opacity: 0, y: 80 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2, duration: 0.8 }}
-          viewport={{ once: true }}
-        />
+       
+        <motion.video
+  src={walk}
+  autoPlay
+  loop
+  muted
+  playsInline
+  className="h-[7rem] sm:h-[12rem] md:h-[16rem] lg:h-[23rem] mx-auto object-contain mt-4"
+  initial={{ opacity: 0, y: 80 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  transition={{ delay: 0.2, duration: 0.8 }}
+  viewport={{ once: true }}
+/>
+
       </motion.div>
     </div>
   );

@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import rbt2 from './Images/rbt2.gif';
+
+import rbt from "./Images/rbt.mp4"
 
 const containerVariants = {
   hidden: {},
@@ -30,12 +31,16 @@ const lineVariants = {
 const Projects = () => {
   return (
     <div className="relative w-full h-screen overflow-hidden">
-      {/* Background GIF */}
-      <img
-        src={rbt2}
-        alt="project visual"
-        className="absolute rounded-md top-0 left-0 w-full h-full object-cover z-0"
-      />
+    
+      <video
+  src={rbt}
+  autoPlay
+  loop
+  muted
+  playsInline
+  className="absolute inset-0 w-full h-full object-cover z-0 rounded-md"
+/>
+
 
       {/* Left-Aligned Text Overlay */}
       <motion.div
@@ -70,7 +75,7 @@ const Projects = () => {
 
           <motion.button
             variants={lineVariants}
-            className="mt-10 px-8 py-3 border-2 border-white rounded-full font-semibold text-sm sm:text-base hover:bg-white hover:text-black transition duration-300"
+            className="mt-10 px-8 py-3 border-2 border-white rounded-full font-semibold text-sm sm:text-base hover:bg-white hover:text-black transition duration-200"
           >
             SHAPE THE FUTURE
           </motion.button>

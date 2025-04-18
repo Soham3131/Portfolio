@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import gsap from "gsap";
-import soham from "./Images/soham.png";
+
+import soha from "./Images/soha.png"
 import Design from "./Design";
 import Moon from "./Moon";
 import Techstack from "./Techstack";
@@ -80,7 +81,7 @@ const Home = () => {
       <div className="fixed top-0 left-0 z-50 flex flex-col">
         {/* Toggle Button */}
         <button
-          className="m-5 z-50 text-white text-[30px] bg-black bg-opacity-60 p-2 rounded-md"
+          className="m-6 z-50 text-white text-[35px] bg-black bg-opacity-60 p-3 rounded-md"
           onClick={() => setMenuOpen(!menuOpen)}
         >
           {menuOpen ? <TbSunMoon /> : <TbMoonStars />}
@@ -105,7 +106,7 @@ const Home = () => {
 
       {/* --- Hero Section --- */}
       <div className="relative w-full h-screen">
-        <img className="w-full h-full object-cover" src={soham} alt="Background" />
+        <img className="w-full h-full rounded-lg object-cover" src={soha} alt="Background" />
 
         {/* Static Text Block */}
         <div className="absolute top-1/3 right-10 text-white text-right z-10">

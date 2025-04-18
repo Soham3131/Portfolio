@@ -4,7 +4,8 @@ import { motion } from "framer-motion";
 import { FiMail } from "react-icons/fi";
 import { FaLinkedin, FaInstagram, FaGithub } from "react-icons/fa";
 import { TbMoonStars, TbSunMoon } from "react-icons/tb";
-import astro from "./Images/astro.gif";
+
+import astrov from "./Images/astrov.mp4"
 import gsap from "gsap";
 
 const triggerClickEffect = (event) => {
@@ -58,15 +59,19 @@ const Contact = () => {
   return (
     <div
       className="relative w-full min-h-screen overflow-hidden flex items-center justify-center px-4 py-10 sm:px-6 md:px-12"
-      style={{
-        backgroundImage: `url(${astro})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-      }}
+     
     >
+      <video
+    className="absolute top-0 left-0 w-full h-full object-cover z-0"
+    src={astrov}
+    autoPlay
+    loop
+    muted
+    playsInline
+  />
       {/* Toggle Button with Icons */}
       <button
-        className="absolute top-5 left-5 z-50 bg-black bg-opacity-50 p-2 rounded-md text-white text-3xl"
+        className="absolute top-5 left-5 z-50 bg-black bg-opacity-50 p-2 rounded-md text-white text-[35px]"
         onClick={() => setMenuOpen(!menuOpen)}
       >
         {menuOpen ? <TbSunMoon /> : <TbMoonStars />}
